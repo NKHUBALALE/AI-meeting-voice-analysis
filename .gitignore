@@ -1,0 +1,20 @@
+# Audio / Video files
+*.wav
+*.webm
+*.mp3
+*.mp4
+
+# Temporary files
+input.webm
+audio.wav
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
