@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Voice Analysis</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 40px;
+            background: #0f172a;
+            color: white;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            cursor: pointer;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎤 AI Meeting Voice Analyzer</h1>
+
+    <input type="file" id="fileInput" />
+    <br><br>
+    <button onclick="upload()">Analyze</button>
+
+    <div id="result" class="card" style="display:none;"></div>
+
+<script>
+async function upload() {
+    const file = document.getElementById("fileInput").files[0];
+
+    if (!file) {
+        alert("Please upload a video");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").innerHTML = "Processing...";
+
+    const response = await fetch("http://192.168.0.23:8000/analyze", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await response.json();
+
+    displayResult(data);
+}
+
+function displayResult(data) {
+    let html = `
+        <h2>Results</h2>
+        <p><b>Volume:</b> ${data.volume}</p>
+        <p><b>Pace:</b> ${data.pace} (${data.wpm} WPM)</p>
+        <p><b>Tone:</b> ${data.tone}</p>
+        <p><b>Confidence Score:</b> ${data.confidence_score}</p>
+        <p><b>Profile:</b> ${data.profile}</p>
+
+        <h3>Feedback</h3>
+        <ul>
+            ${data.feedback.map(f => `<li>${f}</li>`).join("")}
+        </ul>
+
+        <h3>Keywords</h3>
+        <ul>
+            ${data.keywords.map(k => `<li>${k.word} (${k.count})</li>`).join("")}
+        </ul>
+    `;
+
+    document.getElementById("result").innerHTML = html;
+}
+</script>
+
+</body>
+</html>
