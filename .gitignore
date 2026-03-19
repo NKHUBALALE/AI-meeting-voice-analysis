@@ -1,20 +1,45 @@
+# Virtual environment
+ai-voice-analysis/
+venv/
+
 # Audio / Video files
 *.wav
 *.webm
 *.mp3
 *.mp4
+*.mkv
 
 # Temporary files
 input.webm
 audio.wav
 
-# Python
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# OS
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# OS files
 .DS_Store
 Thumbs.db
 
-# Environment
+# Environment variables
 .env
+
+# Logs
+*.log
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Model cache (VERY IMPORTANT for your project)
+.cache/
