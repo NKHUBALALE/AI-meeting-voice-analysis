@@ -54,7 +54,7 @@ async function upload() {
     document.getElementById("result").style.display = "block";
     document.getElementById("result").innerHTML = "Processing...";
 
-    const response = await fetch("http://192.168.0.23:8000/analyze", {
+    const response = await fetch("https://bobbie-expostulatory-donald.ngrok-free.dev/analyze", {
         method: "POST",
         body: formData
     });

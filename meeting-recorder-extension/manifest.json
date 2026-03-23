@@ -1,16 +1,23 @@
 {
   "name": "Meeting Recorder AI",
-  "description": "Record browser tab and save video locally.",
+  "description": "Record browser tab and analyze meeting audio.",
   "version": "1.0",
   "manifest_version": 3,
+
   "permissions": [
     "activeTab",
     "storage",
     "downloads"
   ],
+
+  "host_permissions": [
+    "https://*.ngrok-free.dev/*"
+  ],
+
   "background": {
     "service_worker": "background.js"
   },
+
   "action": {
     "default_popup": "popup.html"
   }

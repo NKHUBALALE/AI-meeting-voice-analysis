@@ -32,7 +32,8 @@ startBtn.addEventListener("click", async () => {
       }
     };
 
-    mediaRecorder.onstop = () => {
+    //  UPDATED PART (backend + download)
+    mediaRecorder.onstop = async () => {
 
       if (recordedChunks.length === 0) {
         console.log("No data recorded.");
@@ -42,10 +43,56 @@ startBtn.addEventListener("click", async () => {
       const blob = new Blob(recordedChunks, { type: "video/webm" });
       const url = URL.createObjectURL(blob);
 
+      //  Keep download feature
       chrome.downloads.download({
         url: url,
         filename: "meeting_recording.webm"
       });
+
+      //  Send to backend
+      try {
+        const formData = new FormData();
+        formData.append("file", blob, "meeting.webm");
+
+        const resultsDiv = document.getElementById("results");
+        if (resultsDiv) {
+          resultsDiv.innerHTML = "Analyzing...";
+        }
+        console.log("Sending to backend...");
+
+        const response = await fetch("https://bobbie-expostulatory-donald.ngrok-free.dev/analyze", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        console.log("Analysis Result:", data);
+
+        // Save result for popup or future UI
+        chrome.storage.local.set({ analysisResult: data });
+
+        // Show results immediately
+        const r = data;
+
+        document.getElementById("results").innerHTML = `
+          <p><b>Volume:</b> ${r.volume}</p>
+          <p><b>Pace:</b> ${r.pace} (${r.wpm} WPM)</p>
+          <p><b>Tone:</b> ${r.tone}</p>
+          <p><b>Score:</b> 
+            <span style="color:${r.confidence_score > 80 ? 'green' : 'orange'}">
+              ${r.confidence_score}
+            </span>
+          </p>
+          <p><b>Profile:</b> ${r.profile}</p>
+
+          <h4>Feedback:</h4>
+          <ul>${r.feedback.map(f => `<li>${f}</li>`).join("")}</ul>
+        `;
+
+      } catch (error) {
+        console.error("Upload failed:", error);
+      }
 
       recordedChunks = [];
 
@@ -82,5 +129,28 @@ stopBtn.addEventListener("click", () => {
 
   startBtn.disabled = false;
   stopBtn.disabled = true;
+
+});
+
+// Load and display results when popup opens
+document.addEventListener("DOMContentLoaded", () => {
+
+  chrome.storage.local.get("analysisResult", (data) => {
+
+    if (!data.analysisResult) return;
+
+    const r = data.analysisResult;
+
+    document.getElementById("results").innerHTML = `
+      <p><b>Volume:</b> ${r.volume}</p>
+      <p><b>Pace:</b> ${r.pace} (${r.wpm} WPM)</p>
+      <p><b>Tone:</b> ${r.tone}</p>
+      <p><b>Score:</b> ${r.confidence_score}</p>
+      <p><b>Profile:</b> ${r.profile}</p>
+
+      <h4>Feedback:</h4>
+      <ul>${r.feedback.map(f => `<li>${f}</li>`).join("")}</ul>
+    `;
+  });
 
 });
