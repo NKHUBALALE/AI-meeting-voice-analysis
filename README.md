@@ -32,11 +32,11 @@ https://ai-meeting-voice-analysis.vercel.app
 ## Project Structure
 
     AI-meeting-voice-analysis/
-    │
-    ├── backend/
-    ├── frontend/
-    ├── meeting-recorder-extension/
-    ├── requirements.txt
+
+    ── backend/
+    ── frontend/
+    ── meeting-recorder-extension/
+    ── requirements.txt
 
 ---
 
