@@ -1,10 +1,12 @@
 # AI Meeting Voice Analyzer
 
-An AI-powered web application that analyzes meeting recordings to
-provide insights into communication style, including volume, pace, tone,
-confidence, and key speaking patterns.
+<p align="center">
+  <img src="./assets/app-screenshot.png" width="850"/>
+</p>
 
-------------------------------------------------------------------------
+An AI-powered web application that analyzes meeting recordings...
+
+----
 
 ## Live Demo
 
@@ -60,19 +62,16 @@ https://ai-meeting-voice-analysis.vercel.app
 
 ## How It Works
 
-    User uploads recording
-            ↓
-    Frontend (Vercel)
-            ↓
-    Ngrok tunnel
-            ↓
-    FastAPI backend
-            ↓
-    Audio processing + AI analysis
-            ↓
-    Results returned to UI
+1. User uploads a meeting recording
+2. Frontend sends the file to the backend via Ngrok
+3. Backend processes audio using AI models
+4. Results are returned and displayed in the UI
 
 ------------------------------------------------------------------------
+
+## Preview
+
+![App Screenshot](./assets/app-screenshot.png)
 
 ## Running Locally
 
@@ -83,7 +82,7 @@ https://ai-meeting-voice-analysis.vercel.app
 
 ------------------------------------------------------------------------
 
-### 2. Setup backend(windows)
+### 2. Setup backend (windows)
         
     cd backend
     python -m venv venv
