@@ -14,7 +14,7 @@ https://ai-meeting-voice-analysis.vercel.app
 
 ## Features
 
--   Upload audio/video recordings
+-   Upload video recordings of WEBM format (.webm)
 -   Analyze communication metrics:
     -   Volume
     -   Speaking pace (WPM)
