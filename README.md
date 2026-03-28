@@ -14,15 +14,15 @@ https://ai-meeting-voice-analysis.vercel.app
 
 ## Features
 
--   Upload audio/video recordings\
+-   Upload audio/video recordings
 -   Analyze communication metrics:
-    -   Volume\
-    -   Speaking pace (WPM)\
-    -   Tone\
-    -   Confidence score\
--   AI-generated communication profile\
--   Personalized feedback suggestions\
--   Keyword extraction with frequency counts\
+    -   Volume
+    -   Speaking pace (WPM)
+    -   Tone
+    -   Confidence score
+-   AI-generated communication profile
+-   Personalized feedback suggestions
+-   Keyword extraction with frequency counts
 -   Chrome extension for recording meetings directly
 
 ------------------------------------------------------------------------
@@ -42,18 +42,18 @@ https://ai-meeting-voice-analysis.vercel.app
 
 ### Frontend
 
--   HTML, CSS, JavaScript\
+-   HTML, CSS, JavaScript
 -   Deployed on Vercel
 
 ### Backend
 
--   Python (FastAPI)\
--   Uvicorn\
+-   Python (FastAPI)
+-   Uvicorn
 -   Speech processing and NLP
 
 ### Tools
 
--   Ngrok (local backend exposure)\
+-   Ngrok (local backend exposure)
 -   FFmpeg (audio/video processing)
 
 ------------------------------------------------------------------------
@@ -204,4 +204,9 @@ fetch("https://your-ngrok-url.ngrok-free.dev/analyze")
 
 Nkhubalale Emmanuel Nkadimeng
 
--   GitHub: https://github.com/NKHUBALALE
+- GitHub: [NKHUBALALE](https://github.com/NKHUBALALE)
+- LinkedIn: [Nkhubalale Emmanuel Nkadimeng](https://www.linkedin.com/in/nkhubalale-emmanuel-nkadimeng/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2F2wPKaEQQjSG4Gfls%2Fe9TA%3D%3D)
+- X/Twitter: [NKHUBALALE](https://x.com/NkhubalaleN)
+- Kaggle: [NKHUBALALE](https://www.kaggle.com/nkhubalale
+)
+
