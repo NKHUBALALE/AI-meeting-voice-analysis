@@ -12,7 +12,7 @@ An AI-powered web application that analyzes meeting recordings...
 
 https://ai-meeting-voice-analysis.vercel.app
 
-------------------------------------------------------------------------
+---
 
 ## Features
 
@@ -27,7 +27,7 @@ https://ai-meeting-voice-analysis.vercel.app
 -   Keyword extraction with frequency counts
 -   Chrome extension for recording meetings directly
 
-------------------------------------------------------------------------
+----
 
 ## Project Structure
 
@@ -38,7 +38,7 @@ https://ai-meeting-voice-analysis.vercel.app
     ├── meeting-recorder-extension/
     ├── requirements.txt
 
-------------------------------------------------------------------------
+---
 
 ## Tech Stack
 
@@ -58,8 +58,7 @@ https://ai-meeting-voice-analysis.vercel.app
 -   Ngrok (local backend exposure)
 -   FFmpeg (audio/video processing)
 
-------------------------------------------------------------------------
-
+---
 ## How It Works
 
 1. User uploads a meeting recording
@@ -67,11 +66,9 @@ https://ai-meeting-voice-analysis.vercel.app
 3. Backend processes audio using AI models
 4. Results are returned and displayed in the UI
 
-------------------------------------------------------------------------
+---
 
-## Preview
 
-![App Screenshot](./assets/app-screenshot.png)
 
 ## Running Locally
 
@@ -80,7 +77,7 @@ https://ai-meeting-voice-analysis.vercel.app
     git clone https://github.com/NKHUBALALE/AI-meeting-voice-analysis.git
     cd AI-meeting-voice-analysis
 
-------------------------------------------------------------------------
+---
 
 ### 2. Setup backend (windows)
         
@@ -89,22 +86,19 @@ https://ai-meeting-voice-analysis.vercel.app
     venv\Scripts\activate   
     pip install -r ../requirements.txt
 
-------------------------------------------------------------------------
-
+---
 ### 3. Run backend server
 
     uvicorn api:app --host 0.0.0.0 --port 8000
 
-------------------------------------------------------------------------
-
+---
 ### 4. Start ngrok
 
     ngrok http 8000
 
 Copy the generated URL (e.g. https://xxxxx.ngrok-free.dev)
 
-------------------------------------------------------------------------
-
+---
 ### 5. Connect frontend to backend
 
 Open:
@@ -119,15 +113,14 @@ fetch("https://your-ngrok-url.ngrok-free.dev/analyze")
 
 Replace with your ngrok URL.
 
-------------------------------------------------------------------------
-
+---
 ### 6. Run the frontend
 
 -   Open `frontend/index.html` in your browser
     OR
 -   Deploy the frontend using Vercel
 
-------------------------------------------------------------------------
+---
 
 ## Instructions for Forking This Repository
 
@@ -136,7 +129,7 @@ Replace with your ngrok URL.
     git clone https://github.com/YOUR_USERNAME/AI-meeting-voice-analysis.git
     cd AI-meeting-voice-analysis
 
-------------------------------------------------------------------------
+---
 
 ### 2. Setup backend
 
@@ -145,19 +138,19 @@ Replace with your ngrok URL.
     venv\Scripts\activate
     pip install -r ../requirements.txt
 
-------------------------------------------------------------------------
+---
 
 ### 3. Run backend
 
     uvicorn api:app --host 0.0.0.0 --port 8000
 
-------------------------------------------------------------------------
+---
 
 ### 4. Start ngrok
 
     ngrok http 8000
 
-------------------------------------------------------------------------
+---
 
 ### 5. Update frontend API URL
 
@@ -171,7 +164,7 @@ Replace:
 fetch("https://your-ngrok-url.ngrok-free.dev/analyze")
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 6. Test the app
 
@@ -179,15 +172,14 @@ fetch("https://your-ngrok-url.ngrok-free.dev/analyze")
 -   Upload a recording
 -   View analysis results
 
-------------------------------------------------------------------------
-
+---
 ## Current Limitations
 
 -   Large video files may cause slow processing
 -   Requires backend and ngrok to be running locally
 -   Video uploads are not optimized
 
-------------------------------------------------------------------------
+---
 
 ## Future Improvements
 
@@ -197,7 +189,7 @@ fetch("https://your-ngrok-url.ngrok-free.dev/analyze")
 -   Drag-and-drop upload
 -   History tracking
 
-------------------------------------------------------------------------
+---
 
 ## Author
 
