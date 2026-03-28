@@ -170,7 +170,9 @@ def analyze_video(file_path):
 
         if total_fillers > 10:
             feedback.append("You used many filler words. Reducing them can improve clarity.")
-
+        
+        if len(feedback) == 0:
+            feedback.append("Great job! Your communication is clear, balanced, and effective.")
         score = 100
 
         if pace_result != "GOOD":
