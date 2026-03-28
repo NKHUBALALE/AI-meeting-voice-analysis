@@ -83,11 +83,11 @@ https://ai-meeting-voice-analysis.vercel.app
 
 ------------------------------------------------------------------------
 
-### 2. Setup backend
-
+### 2. Setup backend(windows)
+        
     cd backend
     python -m venv venv
-    venv\Scripts\activate   # Windows
+    venv\Scripts\activate   
     pip install -r ../requirements.txt
 
 ------------------------------------------------------------------------
@@ -124,8 +124,8 @@ Replace with your ngrok URL.
 
 ### 6. Run the frontend
 
--   Open `frontend/index.html` in your browser\
-    OR\
+-   Open `frontend/index.html` in your browser
+    OR
 -   Deploy the frontend using Vercel
 
 ------------------------------------------------------------------------
@@ -176,26 +176,26 @@ fetch("https://your-ngrok-url.ngrok-free.dev/analyze")
 
 ### 6. Test the app
 
--   Open frontend in browser\
--   Upload a recording\
+-   Open frontend in browser
+-   Upload a recording
 -   View analysis results
 
 ------------------------------------------------------------------------
 
 ## Current Limitations
 
--   Large video files may cause slow processing\
--   Requires backend and ngrok to be running locally\
+-   Large video files may cause slow processing
+-   Requires backend and ngrok to be running locally
 -   Video uploads are not optimized
 
 ------------------------------------------------------------------------
 
 ## Future Improvements
 
--   Convert video to audio automatically\
--   Deploy backend to remove ngrok dependency\
--   Add charts and analytics\
--   Drag-and-drop upload\
+-   Convert video to audio automatically
+-   Deploy backend to remove ngrok dependency
+-   Add charts and analytics
+-   Drag-and-drop upload
 -   History tracking
 
 ------------------------------------------------------------------------
