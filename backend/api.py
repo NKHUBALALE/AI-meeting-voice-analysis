@@ -27,7 +27,7 @@ async def analyze(file: UploadFile = File(...)):
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        # Call your function directly (NO subprocess)
+        # Call the function directly 
         result = analyze_video(file_path)
 
         return result
